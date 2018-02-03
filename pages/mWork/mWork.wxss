@@ -1,0 +1,123 @@
+/* pages/mWork/mWork.wxss */
+
+
+.workShow {
+  width: 100%;
+}
+.more {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .18);
+  position: absolute;
+  right: 30rpx;
+  top:25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bigImg {
+  position: relative;
+}
+.otherInfo {
+  box-sizing: border-box;
+  padding: 30rpx 60rpx 0 40rpx;
+}
+.authorInfo {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+
+}
+.otherInfo2 {
+  box-sizing: border-box;
+  padding: 30rpx 42rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interAct {
+  position: fixed;
+  bottom: 0rpx;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 52;
+}
+.btnLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 25rpx;
+  left: 35rpx;
+  right: 35rpx;
+  z-index: 19;
+}
+.previous {
+  text-align: center;
+  height: 76rpx;
+  width: 76rpx;
+  border-radius: 50%;
+  background-color: #44D8CE;
+  box-shadow: 0 0 8rpx rgba(68, 216, 206, .5);
+}
+.action {
+  display: flex;
+  align-items: center;
+  margin-left: 36rpx;
+  padding: 0 24rpx;
+  height: 76rpx;
+  border-radius: 60rpx;
+  background-color: #FF4477;
+  box-shadow: 0 0 8rpx rgba(255, 68, 119, .5);
+}
+.pl {
+  display:flex;
+  flex-direction: row;
+}
+.actLine {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 125rpx;
+  left: 35rpx;
+  right: 35rpx;
+  z-index: 20;
+}
+.actCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 122rpx;
+  width: 140rpx;
+  box-shadow: 0 0 8rpx rgba(0, 0, 0, .5);
+  border-radius: 60rpx;
+  background-color: #fff;
+  margin: 0 12rpx;
+}
+.showBG {
+  height: 888rpx;
+  width: 100%;
+  background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0)); 
+}
+.showTime {
+  position: fixed;
+  top: 28%;
+  left:50%;
+  margin-left: -110rpx;
+  text-align: center;
+  z-index: 53;
+}
+
+.showTimeInside {
+  position: absolute;
+  width: 220rpx;
+  height: 220rpx;
+  
+  
+}
+.actCellImg {
+  width:95rpx;
+  height:95rpx;
+}

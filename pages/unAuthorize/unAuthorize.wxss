@@ -1,0 +1,22 @@
+/* pages/unAuthorize/unAuthorize.wxss */
+
+.planetF {
+  width: 100%;
+  position: fixed;
+  top: 70rpx;
+  z-index: 99;
+  left: 50%;
+  margin-left:-250rpx;
+  
+}
+.planetP {
+  width:500rpx;
+  height:500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.planetI {
+  width:500rpx;
+  height:500rpx;
+}

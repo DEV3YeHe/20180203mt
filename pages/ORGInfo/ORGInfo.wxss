@@ -1,0 +1,53 @@
+/* pages/ORGInfo/ORGInfo.wxss */
+.textBox {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.formCall {
+  width: 100%;
+  text-align: center;
+  justify-content: flex-start;
+  text-align: start;
+}
+.input1 {
+  border-radius: 4rpx;
+  border: 1rpx solid #666;
+  margin-bottom: 20rpx;
+}
+.input2 {
+  border-radius: 4rpx;
+  width: 100%;
+  height: 440rpx;
+  border: 1rpx solid #666;
+  margin-bottom: 20rpx;
+}
+.t1 {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.t2 {
+  font-size: 30rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.t3 {
+  font-size: 30rpx;
+  display: block;
+  color: #333;
+  font-weight: 500;
+  margin-top: 0rpx;
+}
+.t4 {
+  font-size: 38rpx;
+  display: block;
+  font-weight: 500rpx;
+  color: #999;
+  font-weight: 500;
+  margin-top: 70rpx;
+}
+.jugong {
+  height: 320rpx;
+  width: 100%;
+}

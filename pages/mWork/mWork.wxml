@@ -1,0 +1,78 @@
+<view>
+<!--
+<view class='showTime'>
+  <view wx:for-items='{{categories}}' wx:key='{{item.id}}' class="{{item.id==showTimeId?'showTimeCell':'NONE'}}">
+    <image mode='aspectFit' class='showTimeInside' src='{{item.img_src}}'></image>
+  </view>
+</view>-->
+
+<view class='interAct'>
+  
+
+  <view class='actLine' hidden='{{notActting}}' animation='{{actShow}}'>
+    <view id='{{item.id}}' wx:for-items="{{categories}}" wx:key="{{item.id}}" class="actCell" bindtap='chooseOne' >
+      <image mode='aspectFit' src='{{item.img_src}}' class='actCellImg' animation="{{item.id==showTimeId ? faceAni:a}}"></image>
+      <text >{{}}</text>
+    </view>
+  </view>
+
+  <view class='btnLine'>
+    <view class='pl'>
+      <view class='previous'>
+        <text class='iconfont icon-arrowlongl' style='font-size:32rpx;color:#fff;margin:0 auto;line-height:76rpx;'></text>
+      </view>
+      <view class='action' bindtap='doActting' animation='{{actionBtnAni}}'>
+        <image src='https://image.houseside.xyz/zhangyu.png' style='width:64rpx;height:62rpx;'></image>
+        <!-- 此处应该显示当前用户评价的分类的总数，如果当前用户还没评价该作品，则不显示。-->
+        <text style='font-size:32rpx;color:#fff;margin-left:22rpx;'>{{workInfo.total_interactions == '0'?'投掷一个触评':workInfo.total_interactions+'同感'}}</text>
+        
+      </view>
+    </view>
+    <view class='pr'>
+      <view class='previous'>
+        <text class='iconfont icon-arrowlongr-copy' style='font-size:32rpx;color:#fff;margin:0 auto;line-height:76rpx;'></text>
+      </view>
+    </view>
+  </view>
+  <!--渐变黑背景-->
+  <view class="{{notActting?'':'showBG'}}" animation='{{moveBG}}'></view>
+</view>
+
+<view class='bigImg'>
+  <image class='workShow' mode='widthFix' src='{{workInfo.img_src}}' bindtap='bigShow' bindlongtap='saveImg'></image>
+  <view class='more' bindtap='moreTap'>
+    <view class='iconfont .icon-more' style='font-size:30rpx;color:#fff;'></view>
+  </view>
+</view>
+<view class='otherInfo'>
+  <view class='disUser '>
+    <view style='margin:0 50rpx 60rpx 0;font-size:24rpx;'>话题描述三十个字话题描述三十个字话题描述三十个字话题描述三十</view>
+    <view style='display: flex;justify-content: flex-start;align-items: center;'>
+      <image class='authorInfo' src="{{workInfo.anon? 'http://images.houseside.cn/defAvatar.jpg':workInfo.user.avatar}}"></image>
+      <text style='font-size:24rpx;margin-left:15rpx;font-weight:500;'>{{workInfo.anon?'匿名小触触':workInfo.user.nick_name}}</text>
+      <text style='font-size:24rpx;margin-left:20rpx;'>上传</text>
+    </view>
+  </view>
+</view>
+<view class='lineD2' style='margin-top:20rpx;'></view>
+<view class='LRBtwn otherInfo2' bindtap='intoTopic'>
+  
+    <view>
+      <view style='font-size:24rpx;'>所属话题</view>
+      <view style='font-size:44rpx;margin:5rpx 0 0 0;font-weight:600;'>{{workInfo.topic}}</view>
+    </view>
+    <view>
+      <text class='iconfont icon-enter'></text>
+    </view>
+  
+</view>
+<view class='lineD1'></view>
+<!--底部填充块-->
+<view wx:if='{{isBottom}}'>
+  <view class='UDCenter' style='margin:120rpx 0;'>
+    <text style='color:#d1d1d1;font-size:22rpx;margin:0 auto;'>长按保存，点击放大</text>
+  </view>
+  <text style='opacity: 0;'>chuchu</text>
+</view>
+
+</view>

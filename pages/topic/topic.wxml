@@ -1,0 +1,52 @@
+
+
+<view class='topicHeader'>
+  <image mode='aspectFill' src='{{topic.works[0].img_src}}' class='BGI'></image>
+  <view class='headerInfo'>
+    <!--返回首页，收藏按钮-->
+    <view class='LRBtwn alignItem'>
+      <view class='intoIndex' bindtap='intoIndex'>
+        <image class='userAvatar' src='{{navUser}}'></image>
+        <text style='font-size:24rpx;color:#9B6A4D;line-height:50rpx;'>返回首页</text>
+      </view>
+      <text class="iconfont {{favInfo ? 'icon-Forme':'icon-shoucang1'}}" style="{{favInfo ? 'color:#fff;':'color:#fff;' }}" bindtap='favBtn'>{{favInfo ? ' 已关注':' 关注'}}</text>
+    </view>
+    <!--下部居中-->
+    <view class='titdisc'>
+      <text class='tit'>{{topic.title}}</text>
+      <text class='disc'>{{topic.description}}</text>
+    </view>
+    <view class='btnY01' bindtap='newWork' style='margin:auto;'>有料上传</view>
+  </view>
+</view>
+
+<view class='lineD2'></view>
+  <view class='LRArd' style='width:100%;height:86rpx;align-items: center;'>
+    <view class='LRArd alignItem' style='width:80rpx;height:80rpx;' bindtap='listStyle'>
+      <view class="iconfont icon-list" style="font-size:32rpx;{{longStyle?'color:#44D8CE;':'color:#979797;'}}"></view>
+    </view>
+    <view class='LRArd alignItem' style='width:80rpx;height:80rpx;' bindtap='listStyle'>
+      <view class="iconfont icon-list1" style="font-size:36rpx;{{longStyle?'color:#979797;':'color:#44D8CE;'}}"></view>
+    </view>
+  </view>
+  <view class='lineD2'></view>
+  
+<view class='pieceList'>
+  
+  <view wx:for-items="{{topic.works}}" wx:key="{{item.id}}" style="box-sizing: border-box;padding:28rpx 20rpx;">
+    <view id="{{item.id}}" class='imgList' bindtap='intoMwork'>
+      <view class="{{longStyle?'longPic':'bigPic'}}">
+      <text class="{{longStyle?'t03':'t04'}}">{{item.img_desc}}</text>
+        <image mode="{{longStyle?'aspectFill':'widthFix'}}" src='{{item.img_src ? item.img_src:"../../utils/noPic.png"}}' style="{{longStyle?'height:100%;':''}}width:100%;"></image>
+      </view>
+    </view>
+    
+  </view>
+  <!--底部填充块-->
+    <view wx:if='{{isBottom}}'>
+      <view class='UDCenter' style='margin:120rpx 0;'>
+        <text style='color:#d1d1d1;font-size:22rpx;margin:0 auto;'>气氛搞起来啊</text>
+      </view>
+      <text style='opacity: 0;'>chuchu</text>
+    </view>
+</view>

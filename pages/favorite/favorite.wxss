@@ -1,0 +1,23 @@
+/* pages/favourite/favorite.wxss */
+@import "../../app.wxss";
+
+.favList {
+  margin: 35rpx 20rpx;
+}
+
+.topicName {
+  font-size: 42rpx;
+  font-weight: 500;
+}
+.topicType {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #9B6A4D;
+}
+
+.imgBoard {
+  width: 220rpx;
+  height: 200rpx;
+  border-radius: 4rpx;
+  box-shadow: 0 1rpx 6rpx #BDC1C1;
+}

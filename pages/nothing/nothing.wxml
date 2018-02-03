@@ -1,0 +1,6 @@
+<!--pages/nothing/nothing.wxml-->
+<view class='UDCenter alignItem'>
+  <image mode='widthFix' src='http://images.houseside.cn/Foliage.jpg' style='width:560rpx;margin:130rpx 0 17rpx 0;'></image>
+  <text style='font-size:26rpx;color:#9B6A4D;'>内容好像已经删除，下回快点来</text>
+  <view class='btnBG01' style='width:644rpx;position: absolute;bottom: 90rpx;border-radius: 4rpx;'>去首页</view>
+</view>

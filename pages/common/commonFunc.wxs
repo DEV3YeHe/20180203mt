@@ -1,0 +1,26 @@
+
+var typeCondition = function (topicType) {
+  var ftype = ''
+  var tboxClass = ''
+  switch (topicType){
+    case '1':
+      ftype = '击鼓传画'
+      tboxClass = 'boxtp1'
+      break;
+
+    case '2':
+      ftype = '神作续写'
+      tboxClass = 'boxtp2'
+      break;
+
+    case '3':
+      ftype = '脑洞神侃'
+      tboxClass = 'boxtp3'
+      break;
+  }
+  var tp = { 'ftype': ftype, 'tboxClass': tboxClass };
+  return tp;
+}
+
+module.exports.typeCondition = typeCondition;
+

@@ -1,0 +1,13 @@
+<!--pages/unAuthorize/unAuthorize.wxml-->
+<view class='planetF'>
+  <view class='planetP'>
+    <image class='planetI' src='http://images.houseside.cn/404planet.png'></image>
+  </view>
+  
+</view>
+<view style='width: 100%;text-align: center;margin-top:600rpx;'>
+  <text style='font-size:28rpx;color:#9B6A4D;display:block;'>来吧少年，告诉我你是谁</text>
+  <text style='font-size:28rpx;color:#9B6A4D;'>不然小程序的逻辑跑不通啊...</text>
+  <view class='btnBG01' style='width:644rpx;position: absolute;bottom: 90rpx;border-radius: 4rpx;left:50%;margin-left:-322rpx;' bindtap='doAuthorize'>表明身份</view>
+  
+</view>

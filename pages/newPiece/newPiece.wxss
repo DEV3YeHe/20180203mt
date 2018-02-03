@@ -1,0 +1,83 @@
+/* pages/newPiece/newPiece.wxss */
+@import "../common/common.wxss";
+@import "../../app.wxss";
+
+.box {
+  width: 100%;
+  overflow: hidden;
+}
+.p1 {
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 20rpx 42rpx;
+  
+}
+.t1 {
+  font-size: 34rpx;
+  line-height: 34rpx;
+}
+.picUpload {
+  position: relative;
+  width: 400rpx;
+  background-color: #ECECEC;
+  box-shadow: 0 1rpx 6rpx #BDC1C1;
+  margin: 80rpx 0 90rpx 0;
+  overflow: hidden;
+}
+.img1 {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+
+
+.k1 {
+  
+  text-align: center;
+  border-radius: 18rpx;
+  border: 1rpx solid #F9B94D;
+  padding: 8rpx 16rpx;
+  background-color: #FDEDC8;
+  color: #9B6A4D;
+  font-size: 36rpx;
+  margin: 40rpx 10rpx;
+}
+
+.k2 {
+  
+  text-align: center;
+  border-radius: 18rpx;
+  padding: 8rpx 16rpx;
+  background-color: #9B6A4D;
+  color: #FDEDC8;
+  font-size: 36rpx;
+  margin: 40rpx 10rpx;
+}
+
+.topicName {
+  font-size: 55rpx;
+  margin: 50rpx 30rpx;
+}
+.topicDetail {
+  font-size: 35rpx;
+  margin: 50rpx 30rpx;
+}
+.newBtn {
+  background-color: #44D8CE;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 4rpx;
+}
+.newBtnDisable {
+  background-color: #bbb;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 4rpx;
+}

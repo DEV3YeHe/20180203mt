@@ -1,0 +1,22 @@
+<!--pages/ORGInfo/ORGInfo.wxml-->
+<view style='padding:80rpx 60rpx;'>
+  
+  <view class='UDCenter' style='margin-bottom:70rpx;'>
+    <image src='https://image.houseside.xyz/jugongha.gif' mode='aspectFit' class='jugong'></image>
+    <view class='textBox'>
+      <text class='t1'></text>
+      <text class='t2'>Mystect 目前由几名业余开发者维护，欢迎所有热爱分享热爱社交的伙伴加入到 Mystect 研发社群，我们共同完善这个美妙的小工具！</text>
+      <text class='t2'>不需要专业的能力，只需一颗搞事情的心❤</text>
+    </view>
+  </view>
+
+  <form bindsubmit="formSubmit">
+    <view class='formCall'>
+      <input placeholder='联系方式（选填）' class='input1'></input>
+      <textarea placeholder='你希望 Mystect 怎样改变？' class='input2' bindinput='contentCheck'></textarea>
+      <button formType="submit" disabled='{{notReady}}'>提交</button>
+    </view>
+  </form>
+    <text class='t4'>Or Mail</text>
+    <text class='t3'>📮 mystect_player@aliyun.com</text>
+</view>

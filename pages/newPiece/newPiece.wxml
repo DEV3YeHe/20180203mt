@@ -1,0 +1,45 @@
+<view class='box'>
+
+<view class='frontMask' hidden='{{maskHidden}}'>
+  <view class='frontCard' style='top:20%;left: 114rpx;right:114rpx;background-color:#fff;'>
+    <image mode='widthFix' src='http://images.houseside.cn/ceng.png' style='width:100%;height:auto;'></image>
+    <view style='width:100%;text-align:center;margin:40rpx 0 150rpx 0;'>
+      <text style='font-size:32rpx;'>👏新建成功~</text>
+    </view>
+    <view class='btnBG01' style='width:100%;position:absolute;bottom:0rpx;' bindtap='intoMwork'>去看看</view>
+  </view>
+  <view class='mask40' bindtap='showFrom'></view>
+</view>
+
+<view class='p1'>
+  <text class='t1'>{{topicName}}</text>
+</view>
+<view class='lineD1'></view>
+
+<view class='UDCenter alignItem' style='width:100%;'>
+  <view class='picUpload' bindtap='uploadImg'>
+    <image wx:if='{{imgIn? true:false}}' mode='widthFix' src='{{tempFilePath}}' class='img1'></image>
+    <view wx:if='{{imgIn? false:true}}' class='UDCenter alignItem' style='color:#999;font-size:28rpx;padding:50rpx 0;'>
+      <text>+</text>
+      <text>添加图片</text>
+      <text>7MB以内</text>
+    </view>
+  </view>
+
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <input name='detail' placeholder='描述本楼（选填，30字内）' placeholder-style='color:#ccc;font-weight:200;' maxlength='30' style='font-size:28rpx;height:40rpx;margin-bottom:25rpx;'></input>
+    <checkbox-group name='anonymous'>
+      <checkbox value='anonymous' style='font-size:28rpx;color:#9B6A4D;'>匿名发布这张图</checkbox>
+    </checkbox-group>
+    <text style='font-size:26rpx;color:#AF846A;display:block;'>🚸我是谁？我在哪？</text>
+    
+    <button formType="{{submit}}" class='{{newBtn}}' style='height:70rpx;width:644rpx;margin:35rpx 0 160rpx 0;'>确定提交</button>
+  </form>
+
+  <text style='font-size:26rpx;color:#ddd;'>上传的图文内容请自觉不要太过分，更不要违反法律法规</text>
+  <text style='font-size:26rpx;color:#ddd;margin-bottom:210rpx;'>大家共同维护一个良好的文化社区氛围</text>
+</view>
+
+</view>
+
+

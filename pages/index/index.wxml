@@ -1,0 +1,134 @@
+<!--加载！！！-->
+<view class='loading' wx:if='{{isLoading}}'>
+  <view class='lbd'>
+    <view class="c1"></view>
+    <view class="c2"></view>
+    <view class="c3"></view>
+    <view class="c4"></view>
+  </view>
+  <view class='lt'>前方高能</view>
+</view>
+
+<!--新建话题弹窗-->
+<view class='frontMask' hidden='{{maskHidden}}'>
+  <view animation="{{isCome}}" class='frontCard' style='left: 40rpx;right:40rpx;background-color:#fff;'>
+    <image mode='widthFix' src='http://images.houseside.cn/newTopicHead.png' style='width:100%;height:auto;'></image>
+    <!--表单主体-->
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view style='padding:20rpx 50rpx;'>
+
+        <input name='title' class='formTitle' placeholder='话题名称(12字)' placeholder-style='color:#ccc;font-weight:400;' maxlength='12' bindinput='titleCheck'></input>
+        <input name='detail' placeholder='描述话题参与规则（选填，30字内）' placeholder-style='color:#ccc;font-weight:200;' maxlength='30' style='font-size:28rpx;height:40rpx;margin-bottom:25rpx;'></input>
+        <view class='lineD3'></view>
+        <text style='font-size:24rpx;'>类型</text>
+        <radio-group name='topicType' class="LRBtwn" style="width:86%;">
+          <view class='{{jiguStyle}}' id='jigu' bindtap='tapJIGU'>
+            <radio value="JGCH" checked="{{JIGUon}}" class='NONE'/>
+            击鼓传图
+          </view>
+          <view class='{{shenzuoStyle}}' bindtap='tapSHENZUO'>
+            <radio value="SZXX" checked="{{SHENZUOon}}" class='NONE'/>
+            神作续写
+          </view>
+          <view class='{{nandongStyle}}' bindtap='tapNAODONG'>
+            <radio value="NDSK" checked="{{NAODONGon}}" class='NONE'/>
+            脑洞神侃
+          </view>
+        </radio-group>
+        <view class='notice'>{{typeNotify}}</view>
+        <view style='margin-top:43rpx;margin-bottom:120rpx;'>
+          <checkbox-group name='permission'>
+            <checkbox value='permission' style='font-size:28rpx;color:#9B6A4D;'>设为单人话题</checkbox>
+          </checkbox-group>
+          <text style='font-size:26rpx;color:#AF846A;display:block;'>🚸单人话题仅允许话题创建者添加新内容</text>
+        </view>
+      </view>
+      <button class='{{newBtn}}' formType="{{submit}}">添加内容</button>
+    </form>
+  </view>
+  <view class='mask40' bindtap='showFrom'></view>
+</view>
+<!--新建话题弹窗-->
+
+<view class='lineD1'></view>
+<view class='LRArd alignItem' style='width:100%;height:250rpx;'>
+  <image class='indexAvatar' src='{{userInfo.avatarUrl}}'></image>
+  <view class='UDCenter'>
+    <view class='LRArd' style='margin-bottom:30rpx;'>
+      <view class='UDCenter'>
+        <view class='b40' style='text-align: center;'>{{uploadNab}}</view>
+        <view class='r24' style='text-align: center;color:#999;'>上传</view>
+      </view>
+      <view class='UDCenter'>
+        <view class='b40' style='text-align: center;'>{{beChuNab}}</view>
+        <view class='r24' style='text-align: center;color:#999;'>被触评</view>
+      </view>
+    </view>
+    <view class='LRBtwn'>
+      <view class='btnY01' bindtap='showFrom'>新开个话题</view>
+      <view class='btnY02' bindtap='showORG'>?</view>
+    </view>
+    
+  </view>
+</view>
+<view id='lists'>
+  <view class='lineD2'></view>
+  <view class='LRArd' style='width:100%;height:86rpx;align-items: center;'>
+    <view class='LRArd alignItem' style='width:80rpx;height:80rpx;' bindtap='longStyle'>
+      <view class="iconfont icon-list" style='font-size:32rpx;{{vColor01}}'></view>
+    </view>
+    <view class='LRArd alignItem' style='width:80rpx;height:80rpx;' bindtap='bigStyle'>
+      <view class="iconfont icon-list1" style='font-size:36rpx;{{vColor02}}'></view>
+    </view>
+    <view class='LRArd alignItem' style='width:80rpx;height:80rpx;' bindtap='intoFavorite'>
+      <view class="iconfont icon-shoucang" style='font-size:36rpx;{{vColor03}}'></view>
+    </view>
+    
+  </view>
+  <view class='lineD2'></view>
+  <view class='listBody'>
+    <!--此处编辑列表样式【noContent】-->
+    <view class='noContent' style='width:100%;' wx:if='{{noList}}'>
+      <view style='width:100%;margin:190rpx 0 310rpx 0;display:flex;flex-direction: column;justify-content: center;'>  
+        <image style='width:300rpx;height:300rpx;margin:0 auto;' src='http://images.houseside.cn/noContent.png'></image>
+        <text style='color:#CCCCCC;font-size:26rpx;margin:48rpx auto;'>暂无开往幼稚园的班车🚸</text>
+      </view>
+    </view>
+    
+    <!--此处编辑列表样式【longStyle】-->
+    <view wx:for-items="{{listContent}}" wx:key="{{item.id}}" class='{{longStyle}}'>
+      <view id="{{item.id}}" class='longImg'>
+        <view class='LRBtwn' style='padding-bottom:10rpx;'>
+          <text class='t01'>李小明的传画贴</text>
+          <text class='t02' bindtap='intoTopic'>进入</text>
+        </view>
+        <view class='longPic' bindtap='intoMwork'>
+          <text class='t03'>{{item.pieceDit}}</text>
+          <image mode='aspectFill' src='{{item.src ? item.src:"../../utils/noPic.png"}}' style='height:100%;width:100%;'></image>
+        </view>
+      </view>
+    
+    </view>
+
+    <!--此处编辑列表样式【bigStyle】-->
+    <view wx:for-items="{{listContent}}" wx:key="{{item.id}}" class='{{bigStyle}}'>
+      <view id="{{item.id}}" class='bigImg' bindtap='intoMwork'>
+        <view class='bigPic'>
+          <image mode='widthFix' src='{{item.src ? item.src:"../../utils/noPic.png"}}' style='width:100%;'></image>
+          <text class='t04'>{{item.pieceDit}}</text>
+        </view>
+      </view>
+    
+    </view>
+
+    <!--底部填充块-->
+    <view>
+      <view class='UDCenter' style='margin:120rpx 0;'>
+        <text style='color:#d1d1d1;font-size:22rpx;margin:0 auto;'>气氛搞起来啊</text>
+      </view>
+      <text style='opacity: 0;'>chuchu</text>
+    </view>
+    
+    
+  </view>
+</view>
