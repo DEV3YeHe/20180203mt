@@ -96,16 +96,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
     var that = this
     wx.getStorage({
       key: 'userInfo',
-      success: function(res) {
+      success: function (res) {
         that.setData({
           userInfo: res.data
         })
         console.log(that.data.userInfo)
       },
-      fail: function (res){
+      fail: function (res) {
         wx.getUserInfo({
           success: res => {
             console.log('取到了info √ --> ')
@@ -123,13 +130,6 @@ Page({
         console.log(res)
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
   },
 
   /**

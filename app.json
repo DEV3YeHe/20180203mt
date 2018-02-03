@@ -10,7 +10,6 @@
     "pages/newPiece/newPiece",
     "pages/unAuthorize/unAuthorize",
     "pages/nothing/nothing"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
